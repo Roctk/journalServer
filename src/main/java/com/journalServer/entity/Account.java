@@ -1,7 +1,5 @@
 package com.journalServer.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 /**
@@ -12,42 +10,35 @@ import javax.persistence.*;
 public class Account {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name= "increment", strategy= "increment")
-    @Column(name = "id", length = 6, nullable = false)
-    private long id;
-
-    @Column(name = "login", nullable = false, length = 20)
-    private String login;
-
-    @Column(name = "password", nullable = false,length = 50)
-    private String password;
+    private Integer id;
+    private String name;
+    private String phone;
 
     public Account(){
     }
 
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getName() {
+        return name;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setName(String login) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
