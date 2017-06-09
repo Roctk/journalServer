@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="journaldb" uuid="0d7db895-df05-476d-b05b-36bccc3e00a4">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>journaldb.*</schema-pattern>
+      <default-schemas>journaldb.*</default-schemas>
+    </data-source>
+  </component>
+</project>

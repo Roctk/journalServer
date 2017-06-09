@@ -1,7 +1,7 @@
 package com.journalServer.service;
 
-import com.journalServer.entity.Account;
-import com.journalServer.repository.AccountRepository;
+import com.journalServer.entity.Users;
+import com.journalServer.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,24 +11,24 @@ import java.util.List;
  * Created by rocti on 01.03.2017.
  */
 @Service
-public class AccountServiceImpl implements AccountService {
+public class AccountServiceImpl implements UserService {
 
     @Autowired
-    private AccountRepository accountRepository;
+    private UserRepository userRepository;
 
-    public List<Account> getAll() {
-        return accountRepository.findAll();
+    public List<Users> getAll() {
+        return userRepository.findAll();
     }
 
-    public Account getById(int id) {
-        return accountRepository.findOne(id);
+    public Users getById(int id) {
+        return userRepository.findOne(id);
     }
 
-    public Account save(Account account) {
-        return accountRepository.saveAndFlush(account);
+    public Users save(Users users) {
+        return userRepository.saveAndFlush(users);
     }
 
     public void remove(int id) {
-        accountRepository.delete(id);
+        userRepository.delete(id);
     }
 }

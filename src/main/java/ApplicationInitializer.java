@@ -1,5 +1,4 @@
 import com.journalServer.config.WebConfig;
-import com.journalServer.repository.AccountRepository;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

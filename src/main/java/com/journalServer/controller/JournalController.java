@@ -1,7 +1,7 @@
 package com.journalServer.controller;
 
-import com.journalServer.entity.Account;
-import com.journalServer.service.AccountService;
+import com.journalServer.entity.Users;
+import com.journalServer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,29 +14,29 @@ import java.util.List;
 public class JournalController {
 
     @Autowired
-    private AccountService service;
+    private UserService service;
 
     @RequestMapping(value = "/accounts",method = RequestMethod.GET)
     @ResponseBody
-    public List<Account> getAllAccounts() {
+    public List<Users> getAllUsers() {
         return service.getAll();
     }
 
     @RequestMapping(value = "/accounts/{id}",method = RequestMethod.GET)
     @ResponseBody
-    public Account getAccount(@PathVariable("id") int accountId) {
-        return service.getById(accountId);
+    public Users getUser(@PathVariable("id") int userId) {
+        return service.getById(userId);
     }
 
     @RequestMapping(value = "/accounts/",method = RequestMethod.POST)
     @ResponseBody
-    public Account saveAccount(@RequestBody Account account) {
-        return service.save(account);
+    public Users saveUser(@RequestBody Users user) {
+        return service.save(user);
     }
 
     @RequestMapping(value = "/accounts/{id}",method = RequestMethod.POST)
     @ResponseBody
-    public void deleteAccount(@PathVariable("id") int accountId) {
-        service.remove(accountId);
+    public void deleteAccount(@PathVariable("id") int userId) {
+        service.remove(userId);
     }
 }

@@ -1,17 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - journaldb@localhost" uuid="dc90fb6d-eec2-4269-b4c8-da198a722cc8">
+  <data-source name="journaldb" uuid="0d7db895-df05-476d-b05b-36bccc3e00a4">
     <database-info product="MySQL" version="5.7.13-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="journaldb"/>
-    <table name="account" schema="" catalog="journaldb" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="phone" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+    <table name="group" schema="" catalog="journaldb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="subject_group_fk0" table="subject_group" schema="" catalog="journaldb" columns="group_id"/>
+      <exported-key name="users_fk0" table="users" schema="" catalog="journaldb" columns="group_id"/>
+    </table>
+    <table name="marks" schema="" catalog="journaldb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="value" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="subject_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="marks_fk0" columns="user_id" ref-table="users" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="marks_fk1" columns="subject_id" ref-table="subjects" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="marks_fk0" unique="false" columns="user_id"/>
+      <index name="marks_fk1" unique="false" columns="subject_id"/>
+    </table>
+    <table name="subject_group" schema="" catalog="journaldb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="subject_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="subject_group_fk0" columns="group_id" ref-table="group" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="subject_group_fk1" columns="subject_id" ref-table="subjects" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="subject_group_fk0" unique="false" columns="group_id"/>
+      <index name="subject_group_fk1" unique="false" columns="subject_id"/>
+    </table>
+    <table name="subjects" schema="" catalog="journaldb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="marks_fk1" table="marks" schema="" catalog="journaldb" columns="subject_id"/>
+      <exported-key name="subject_group_fk1" table="subject_group" schema="" catalog="journaldb" columns="subject_id"/>
+    </table>
+    <table name="users" schema="" catalog="journaldb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="surName" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fatherName" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="birth" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="e_mail" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="check" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="users_fk0" columns="group_id" ref-table="group" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="marks_fk0" table="marks" schema="" catalog="journaldb" columns="user_id"/>
+      <index name="users_fk0" unique="false" columns="group_id"/>
     </table>
   </data-source>
 </component>
