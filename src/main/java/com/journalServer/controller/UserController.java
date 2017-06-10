@@ -11,7 +11,7 @@ import java.util.List;
  * Created by rocti on 26.02.2017.
  */
 @RestController
-public class JournalController {
+public class UserController {
 
     @Autowired
     private UserService service;
