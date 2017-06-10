@@ -1,7 +1,8 @@
-package com.journalServer.service;
+package com.journalServer.service.Impl;
 
 import com.journalServer.entity.Users;
 import com.journalServer.repository.UserRepository;
+import com.journalServer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * Created by rocti on 01.03.2017.
  */
 @Service
-public class AccountServiceImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
