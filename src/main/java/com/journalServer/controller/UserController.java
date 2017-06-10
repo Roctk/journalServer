@@ -14,29 +14,29 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService service;
+    private UserService userService;
 
-    @RequestMapping(value = "/accounts",method = RequestMethod.GET)
+    @RequestMapping(value = "/users",method = RequestMethod.GET)
     @ResponseBody
     public List<Users> getAllUsers() {
-        return service.getAll();
+        return userService.getAll();
     }
 
-    @RequestMapping(value = "/accounts/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/{id}",method = RequestMethod.GET)
     @ResponseBody
     public Users getUser(@PathVariable("id") int userId) {
-        return service.getById(userId);
+        return userService.getById(userId);
     }
 
-    @RequestMapping(value = "/accounts/",method = RequestMethod.POST)
+    @RequestMapping(value = "/user/",method = RequestMethod.POST)
     @ResponseBody
     public Users saveUser(@RequestBody Users user) {
-        return service.save(user);
+        return userService.save(user);
     }
 
-    @RequestMapping(value = "/accounts/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/remove_user/{id}",method = RequestMethod.POST)
     @ResponseBody
-    public void deleteAccount(@PathVariable("id") int userId) {
-        service.remove(userId);
+    public void deleteUser(@PathVariable("id") int userId) {
+        userService.remove(userId);
     }
 }
