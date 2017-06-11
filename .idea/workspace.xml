@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f30ad0e9-7140-40f6-8fa6-7ff2ea6930ac" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Dyplom\JournalServer\target\classes\com\journalServer\controller\JournalController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dyplom\JournalServer\target\classes\com\journalServer\service\AccountServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dyplom\JournalServer\target\com.roctik.journalServer-1.0-SNAPSHOT\WEB-INF\classes\com\journalServer\controller\JournalController.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dyplom\JournalServer\target\com.roctik.journalServer-1.0-SNAPSHOT\WEB-INF\classes\com\journalServer\service\AccountServiceImpl.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/journalServer/entity/Marks.class" afterPath="$PROJECT_DIR$/target/classes/com/journalServer/entity/Marks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/com/journalServer/entity/Marks.class" afterPath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/com/journalServer/entity/Marks.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/journalServer/repository/UserRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/journalServer/repository/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/com/journalServer/repository/UserRepository.class" afterPath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/com/journalServer/repository/UserRepository.class" />
-      <change type="MODIFICATION" beforePath="D:\Dyplom\JournalServer\target\classes\com\journalServer\entity\Users.class" afterPath="D:\Dyplom\JournalServer\target\classes\com\journalServer\entity\Users.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/com/journalServer/entity/Users.class" afterPath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/com/journalServer/entity/Users.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/GroupRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/GroupRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/entity/Marks.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/entity/Marks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/MarksRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/MarksRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/SubjectGroupRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/SubjectGroupRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/SubjectRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/SubjectRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/repository/UserRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/service/Impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/service/Impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/journalServer/entity/Users.java" afterPath="$PROJECT_DIR$/src/main/java/com/journalServer/entity/Users.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.properties" afterPath="$PROJECT_DIR$/target/classes/hibernate.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" afterPath="$PROJECT_DIR$/target/com.roctik.journalServer-1.0-SNAPSHOT/WEB-INF/classes/hibernate.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f30ad0e9-7140-40f6-8fa6-7ff2ea6930ac" name="Default" comment="" />
     <ignored path="JournalServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -90,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/journalServer/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.64896756">
               <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Users.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6519174">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -1028,7 +1000,7 @@
       <workItem from="1496752426274" duration="7643000" />
       <workItem from="1496761364719" duration="5822000" />
       <workItem from="1496921262420" duration="38365000" />
-      <workItem from="1497184392915" duration="8786000" />
+      <workItem from="1497184392915" duration="9554000" />
     </task>
     <task id="LOCAL-00001" summary="server">
       <created>1488357629035</created>
@@ -1046,7 +1018,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131253000" />
+    <option name="totallyTimeSpent" value="132021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1058,7 +1030,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1524,10 +1496,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/journalServer/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Users.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1554,10 +1526,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Users.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/journalServer/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6519174">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.64896756">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
