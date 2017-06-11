@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findOne(id);
     }
 
-    public Users save(Users users) {
-        return userRepository.saveAndFlush(users);
+    public Users save(Users user) {
+        return userRepository.saveAndFlush(user);
     }
 
     public void remove(int id) {

@@ -12,9 +12,9 @@ public class Marks {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String value;
+    private String val;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date date;
+    private Date dates;
     private Integer user_id;
     private Integer subject_id;
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
@@ -34,19 +34,19 @@ public class Marks {
     }
 
     public String getValue() {
-        return value;
+        return val;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setValue(String val) {
+        this.val = val;
     }
 
     public Date getDate() {
-        return date;
+        return dates;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(Date dates) {
+        this.dates = dates;
     }
 
     public Integer getUser_id() {

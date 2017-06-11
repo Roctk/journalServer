@@ -1,10 +1,23 @@
 package com.journalServer.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.journalServer.entity.Users;
 import com.journalServer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -28,9 +41,10 @@ public class UserController {
         return userService.getById(userId);
     }
 
-    @RequestMapping(value = "/user/",method = RequestMethod.POST)
+    @RequestMapping(value = "/user",method = RequestMethod.POST)
     @ResponseBody
     public Users saveUser(@RequestBody Users user) {
+        System.out.println(user);
         return userService.save(user);
     }
 

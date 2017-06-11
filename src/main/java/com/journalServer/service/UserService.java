@@ -10,6 +10,6 @@ import java.util.List;
 public interface UserService {
     List<Users> getAll();
     Users getById(int id);
-    Users save(Users users);
+    Users save(Users user);
     void remove(int id);
 }

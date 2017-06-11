@@ -1,5 +1,7 @@
 package com.journalServer.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
@@ -8,13 +10,14 @@ import java.util.Set;
  * Created by rocti on 06.06.2017.
  */
 @Entity
-@Table(name = "`users`")
+@Table(name = "users")
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private Integer id;
     private String login;
-    private String password;
+    private String pass;
     private String name;
     private String surName;
     private String fatherName;
@@ -26,6 +29,8 @@ public class Users {
     private Integer group_id;
     private Integer check;
 
+    public Users() {
+    }
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "users")
     private Set<Marks> marks;
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
@@ -65,11 +70,11 @@ public class Users {
     }
 
     public String getPassword() {
-        return password;
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String pass) {
+        this.pass = pass;
     }
 
     public String getFatherName() {
