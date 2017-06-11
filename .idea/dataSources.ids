@@ -7,60 +7,77 @@
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="journaldb"/>
-    <table name="group" schema="" catalog="journaldb" type="TABLE">
+    <table name="groups" schema="" catalog="journaldb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="subject_group_fk0" table="subject_group" schema="" catalog="journaldb" columns="group_id"/>
-      <exported-key name="users_fk0" table="users" schema="" catalog="journaldb" columns="group_id"/>
+      <exported-key name="pupils_groups" table="pupils" schema="" catalog="journaldb" columns="groupId"/>
+      <exported-key name="subjectTeach_groups" table="subjectteach" schema="" catalog="journaldb" columns="groupId"/>
     </table>
     <table name="marks" schema="" catalog="journaldb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="val" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="dates" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="subject_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="mark" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="pupilId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="subjectId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="marks_fk0" columns="user_id" ref-table="users" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="marks_fk1" columns="subject_id" ref-table="subjects" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="marks_fk0" unique="false" columns="user_id"/>
-      <index name="marks_fk1" unique="false" columns="subject_id"/>
+      <foreign-key name="marks_pupils" columns="pupilId" ref-table="pupils" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="marks_subjects" columns="subjectId" ref-table="subjects" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="marks_pupils" unique="false" columns="pupilId"/>
+      <index name="marks_subjects" unique="false" columns="subjectId"/>
     </table>
-    <table name="subject_group" schema="" catalog="journaldb" type="TABLE">
+    <table name="pupils" schema="" catalog="journaldb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="subject_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="login" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="firstName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fatherName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="gender" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="birth" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="mail" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="groupId" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="subject_group_fk0" columns="group_id" ref-table="group" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="subject_group_fk1" columns="subject_id" ref-table="subjects" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="subject_group_fk0" unique="false" columns="group_id"/>
-      <index name="subject_group_fk1" unique="false" columns="subject_id"/>
+      <foreign-key name="pupils_groups" columns="groupId" ref-table="groups" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="marks_pupils" table="marks" schema="" catalog="journaldb" columns="pupilId"/>
+      <index name="pupils_groups" unique="false" columns="groupId"/>
     </table>
     <table name="subjects" schema="" catalog="journaldb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="marks_fk1" table="marks" schema="" catalog="journaldb" columns="subject_id"/>
-      <exported-key name="subject_group_fk1" table="subject_group" schema="" catalog="journaldb" columns="subject_id"/>
+      <exported-key name="marks_subjects" table="marks" schema="" catalog="journaldb" columns="subjectId"/>
+      <exported-key name="subjectTeach_subjects" table="subjectteach" schema="" catalog="journaldb" columns="subjectId"/>
     </table>
-    <table name="users" schema="" catalog="journaldb" type="TABLE">
+    <table name="subjectteach" schema="" catalog="journaldb" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="pass" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="surName" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fatherName" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="gender" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="birth" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
-      <column name="e_mail" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="phone" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="address" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
-      <column name="group_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="check" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="subjectId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="teacherId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="groupId" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="users_fk0" columns="group_id" ref-table="group" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="marks_fk0" table="marks" schema="" catalog="journaldb" columns="user_id"/>
-      <index name="users_fk0" unique="false" columns="group_id"/>
+      <foreign-key name="subjectTeach_groups" columns="groupId" ref-table="groups" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="subjectTeach_subjects" columns="subjectId" ref-table="subjects" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="subjectTeach_teachers" columns="teacherId" ref-table="teachers" ref-schema="" ref-catalog="journaldb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="subjectTeach_groups" unique="false" columns="groupId"/>
+      <index name="subjectTeach_subjects" unique="false" columns="subjectId"/>
+      <index name="subjectTeach_teachers" unique="false" columns="teacherId"/>
+    </table>
+    <table name="teachers" schema="" catalog="journaldb" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="login" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="firstName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fatherName" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12"/>
+      <column name="gender" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="birth" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="mail" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="15" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="subjectTeach_teachers" table="subjectteach" schema="" catalog="journaldb" columns="teacherId"/>
     </table>
   </data-source>
 </component>

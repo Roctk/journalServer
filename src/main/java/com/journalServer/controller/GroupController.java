@@ -28,9 +28,10 @@ public class GroupController {
         return groupService.getById(userId);
     }
 
-    @RequestMapping(value = "/group/",method = RequestMethod.POST)
+    @RequestMapping(value = "/group",method = RequestMethod.POST)
     @ResponseBody
     public Group saveGroup(@RequestBody Group group) {
+
         return groupService.save(group);
     }
 

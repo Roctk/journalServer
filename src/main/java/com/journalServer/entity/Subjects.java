@@ -1,5 +1,7 @@
 package com.journalServer.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -7,17 +9,20 @@ import java.util.Set;
  * Created by rocti on 06.06.2017.
  */
 @Entity
-@Table(name = "`subjects`")
+@Table(name = "subjects")
 public class Subjects {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private Integer id;
-    private String name;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "subjects")
-    private Set<Marks> marks;
+    private String title;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "subjects")
-    private Set<SubjectGroup> subjectGroups;
+    public Subjects() {
+    }
+
+    public Subjects(String title) {
+        this.title = title;
+    }
 
     public Integer getId() {
         return id;
@@ -27,11 +32,11 @@ public class Subjects {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

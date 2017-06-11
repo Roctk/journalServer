@@ -28,7 +28,7 @@ public class SubjectsController {
         return subjectService.getById(subjectId);
     }
 
-    @RequestMapping(value = "/subject/",method = RequestMethod.POST)
+    @RequestMapping(value = "/subject",method = RequestMethod.POST)
     @ResponseBody
     public Subjects saveSubject(@RequestBody Subjects subject) {
         return subjectService.save(subject);

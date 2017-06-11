@@ -28,7 +28,7 @@ public class MarksController {
         return marksService.getById(markId);
     }
 
-    @RequestMapping(value = "/mark/",method = RequestMethod.POST)
+    @RequestMapping(value = "/mark",method = RequestMethod.POST)
     @ResponseBody
     public Marks saveMark(@RequestBody Marks mark) {
         return marksService.save(mark);

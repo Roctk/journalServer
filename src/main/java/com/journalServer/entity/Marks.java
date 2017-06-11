@@ -1,5 +1,7 @@
 package com.journalServer.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,23 +9,38 @@ import java.util.Date;
  * Created by rocti on 06.06.2017.
  */
 @Entity
-@Table(name = "`marks`")
+@Table(name = "marks")
 public class Marks {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name= "increment", strategy= "increment")
     private Integer id;
-    private String val;
+    private Integer mark;
     @Temporal(javax.persistence.TemporalType.DATE)
-    private Date dates;
-    private Integer user_id;
-    private Integer subject_id;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "user_id", nullable = false,updatable = false,insertable = false)
-    private Users users;
+    private Date date;
+    private Integer pupilId;
+    private Integer subjectId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "subject_id", nullable = false, updatable = false,insertable = false)
-    private Subjects subjects;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "pupilId", nullable = false, insertable = false, updatable = false)
+    private Pupils pupil;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "subjectId", nullable = false, insertable = false, updatable = false)
+    private Subjects subject;
+
+    public Marks() {
+    }
+
+    public Marks(Integer mark, Date date, Integer pupilId,
+                 Integer subjectId, Pupils pupil, Subjects subject) {
+        this.mark = mark;
+        this.date = date;
+        this.pupilId = pupilId;
+        this.subjectId = subjectId;
+        this.pupil = pupil;
+        this.subject = subject;
+    }
 
     public Integer getId() {
         return id;
@@ -33,35 +50,51 @@ public class Marks {
         this.id = id;
     }
 
-    public String getValue() {
-        return val;
+    public Integer getMark() {
+        return mark;
     }
 
-    public void setValue(String val) {
-        this.val = val;
+    public void setMark(Integer mark) {
+        this.mark = mark;
     }
 
     public Date getDate() {
-        return dates;
+        return date;
     }
 
-    public void setDate(Date dates) {
-        this.dates = dates;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Integer getUser_id() {
-        return user_id;
+    public Integer getPupilId() {
+        return pupilId;
     }
 
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
+    public void setPupilId(Integer pupilId) {
+        this.pupilId = pupilId;
     }
 
-    public Integer getSubject_id() {
-        return subject_id;
+    public Integer getSubjectId() {
+        return subjectId;
     }
 
-    public void setSubject_id(Integer subject_id) {
-        this.subject_id = subject_id;
+    public void setSubjectId(Integer subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public Pupils getPupil() {
+        return pupil;
+    }
+
+    public void setPupil(Pupils pupil) {
+        this.pupil = pupil;
+    }
+
+    public Subjects getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subjects subject) {
+        this.subject = subject;
     }
 }

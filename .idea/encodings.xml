@@ -4,13 +4,13 @@
     <file url="file://$PROJECT_DIR$/src/main/java/ApplicationInitializer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/config/DBConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/config/WebConfig.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/controller/UserController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/controller/PupilController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Group.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Marks.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/SubjectGroup.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Pupils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/SubjectTeach.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Subjects.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/entity/Users.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/service/Impl/UserServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/service/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/service/Impl/PupilServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/journalServer/service/PupilService.java" charset="UTF-8" />
   </component>
 </project>
