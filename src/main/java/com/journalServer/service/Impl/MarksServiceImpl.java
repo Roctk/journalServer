@@ -26,7 +26,7 @@ public class MarksServiceImpl implements MarksService {
     }
 
     public Marks save(Marks marks) {
-        return marksRepository.saveAndFlush(marks);
+        return marksRepository.save(marks);
     }
 
     public void remove(int id) {

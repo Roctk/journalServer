@@ -26,7 +26,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     public Teachers save(Teachers teacher) {
-        return teacherRepository.saveAndFlush(teacher);
+        return teacherRepository.save(teacher);
     }
 
     public void remove(int id) {

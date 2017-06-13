@@ -26,7 +26,7 @@ public class GroupServiceImpl implements GroupService {
     }
 
     public Group save(Group group) {
-        return groupRepository.saveAndFlush(group);
+        return groupRepository.save(group);
     }
 
     public void remove(int id) {

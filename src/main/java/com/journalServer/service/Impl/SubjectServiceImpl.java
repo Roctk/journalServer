@@ -26,7 +26,7 @@ public class SubjectServiceImpl implements SubjectService {
     }
 
     public Subjects save(Subjects subjects) {
-        return subjectRepository.saveAndFlush(subjects);
+        return subjectRepository.save(subjects);
     }
 
     public void remove(int id) {

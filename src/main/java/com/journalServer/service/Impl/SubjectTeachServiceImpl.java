@@ -26,7 +26,7 @@ public class SubjectTeachServiceImpl implements SubjectTeachService {
     }
 
     public SubjectTeach save(SubjectTeach subjectTeach) {
-        return subjectTeacherRepository.saveAndFlush(subjectTeach);
+        return subjectTeacherRepository.save(subjectTeach);
     }
 
     public void remove(int id) {
